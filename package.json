@@ -1,0 +1,16 @@
+{
+  "name": "tbt",
+  "version": "1.0.0",
+  "description": "modules for tbt ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cannon": "^0.6.2",
+    "express": "^4.15.4",
+    "socket.io": "^2.0.3"
+  }
+}

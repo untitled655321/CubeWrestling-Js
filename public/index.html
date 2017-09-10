@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> TheBabilonProject</title>
+		<link rel='stylesheet' href='style.css'/>
+		
+	</head>
+	<body>
+	<div id="container">
+	<h1 style="color: white; text-align: center;"> TBT Prototype</h1>
+		<div id="canvas"> </div>
+		<div id="buttons">
+		<input class="myButton" type="submit" value="1-perspective" onclick="first_perspective()"></input>
+		<input class="myButton" type="submit" value="2-perspective" onclick="second_perspective()"></input>
+		<input class="myButton" type="submit" value="3-perspective" onclick="third_perspective()"></input>
+		<div id="cam_coordinates"></div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+		<script src="cannon.js"></script>
+		<script src="three.min.js"></script>
+		<script src="cube1.js"></script>
+		</div>
+	</body>
+</html>

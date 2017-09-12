@@ -58,23 +58,26 @@ function heartbeat()
 	socket.on('update', cubeUpdate);
 	function cubeUpdate(data)
 	{
+		
 			//console.log(socket.id + " "+data.x,data.y,data.z,data.rot_x,data.rot_y,data.rot_z,data.rot_w);
-
-			var player;
-			for(var i=0;i<players.length;i++)
+			if(player!=null)
 			{
-				if(socket.id ==players[i].id)
+				var player;
+				for(var i=0;i<players.length;i++)
 				{
-					player = players[i];
+					if(socket.id ==players[i].id)
+					{
+						player = players[i];
+					}
 				}
+				player.x = data.x;
+				player.y = data.y;
+				player.z = data.z;
+				player.rot_x = data.rot_x;
+				player.rot_y = data.rot_y;
+				player.rot_z = data.rot_z;
+				player.rot_w = data.rot_w;
 			}
-			player.x = data.x;
-			player.y = data.y;
-			player.z = data.z;
-			player.rot_x = data.rot_x;
-			player.rot_y = data.rot_y;
-			player.rot_z = data.rot_z;
-			player.rot_w = data.rot_w;
 			
 	}
 	

@@ -188,8 +188,8 @@ function Make_player_tru(x,y,z,rot_x,rot_y,rot_z,rot_w)
 
 
 function init(){
-	
-	socket = io.connect('http://localhost:3000');
+	var https = 'https://cubewrestling.herokuapp.com/';
+	socket = io.connect(https);
 	//socket.on('cube', drawCube);
 	
 				var cub = new Player_init(Math.floor((Math.random() * 10) + 1),0,Math.floor((Math.random() * 10) + 1),0,0,0,0);
@@ -325,45 +325,7 @@ function init(){
 	animate();
 }
 
-/*function drawCube()
-{
-	cube = new THREE.Mesh(
-		new THREE.CubeGeometry(1,1,1),
-		new THREE.MeshPhongMaterial({color:0x111111, wireframe:USE_WIREFRAME})
-	);
-	cube.castShadow = true;
-		cube.position.y += 2;
-		cube.position.x = 10;
-		cube.position.z = 10;
-		scene.add(cube);
-	
-		var body = new CANNON.Body({
-            mass: 125
-        });
-        var shape = new CANNON.Box(new CANNON.Vec3( 0.5, 0.5, 0.5 ));
-        body.addShape(shape);
-		 body.position.set(
-        cube.position.x, cube.position.y, cube.position.z
-    );
-	cube.useQuaternion = true;
-        world.add(body);
-cube.position.x = data.x;
-	cube.position.y = data.y;
-	cube.position.z = data.z;
-	cube.quaternion.x = data.rotx;
-cube.quaternion.y = data.roty;
-cube.quaternion.z = data.rotz;
-cube.quaternion.w = data.rotw;
-body.position.x= data.x;
-body.position.y= data.y;
-body.position.z= data.z;
-body.quaternion.x = data.rotx;
-body.quaternion.y = data.roty;
-body.quaternion.z = data.rotz;
-body.quaternion.w = data.rotw;
 
-}	
-*/
 
 var time_last_run;
 function send_player_position_via_socket()

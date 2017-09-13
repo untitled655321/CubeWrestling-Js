@@ -260,7 +260,7 @@ function init(){
 				if(data[i].id!=socket_id)
 				{
 					
-					console.log("prawda");
+					//console.log("prawda");
 				 three_shapes[i].position.x = data[i].x;
 				 three_shapes[i].position.y = data[i].y;
 				 three_shapes[i].position.z = data[i].z;

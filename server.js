@@ -15,7 +15,7 @@ var app = express();
 var http = app.listen(3000);
 var socket = require('socket.io');
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 console.log("socket runing");
 
 var io = socket(http);

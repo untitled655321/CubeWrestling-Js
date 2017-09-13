@@ -9,10 +9,10 @@ function Players(id,x,y,z,rot_x,rot_y,rot_z,rot_w)
 	
 }
 
-
+var port = process.env.PORT || 3000;
 var express = require('express');
 var app = express();
-var http = app.listen(3000);
+var http = app.listen(port);
 var socket = require('socket.io');
 
 app.use(express.static(__dirname + '/public'));

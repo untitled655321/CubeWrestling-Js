@@ -54,6 +54,13 @@ function heartbeat()
 			
 			
 	}
+	socket.on('disconnect', function()
+	{
+		players = players.filter(function(data){
+			return data.id !== socket.id;
+		});
+		console.log("disconnect");
+	});
 	
 	socket.on('update', cubeUpdate);
 	function cubeUpdate(data)
@@ -82,13 +89,7 @@ function heartbeat()
 	}
 	
 	setInterval(heartbeat,16);
-	socket.on('disconnect', function()
-	{
-		players = players.filter(function(data){
-			return data.id !== socket.id;
-		});
-		console.log("disconnect");
-	});
+	
 }
 
 /*(function animloop(){

@@ -207,7 +207,12 @@ function init(){
 				}
 				socket.emit('start',data);
 				
-			
+				//send unique socket id to local browswer
+				socket.on('socketid',function(data)
+				{
+					//console.log(data);
+					socket_id = data;
+				});
 				
 			
 			
@@ -352,12 +357,6 @@ function send_player_position_via_socket()
 		
 }
 function animate(){
-		//send unique socket id to local browswer
-				socket.on('socketid',function(data)
-				{
-					//console.log(data);
-					socket_id = data;
-				});
 	//send player list
 			
 	//animate Cube position+ it rigidbody

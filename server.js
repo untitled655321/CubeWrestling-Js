@@ -60,8 +60,7 @@ function heartbeat()
 	{
 		
 			//console.log(socket.id + " "+data.x,data.y,data.z,data.rot_x,data.rot_y,data.rot_z,data.rot_w);
-			if(player!=null)
-			{
+			
 				var player;
 				for(var i=0;i<players.length;i++)
 				{
@@ -77,7 +76,7 @@ function heartbeat()
 				player.rot_y = data.rot_y;
 				player.rot_z = data.rot_z;
 				player.rot_w = data.rot_w;
-			}
+			
 			
 	}
 	

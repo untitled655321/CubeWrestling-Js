@@ -260,7 +260,7 @@ function init(){
 					player_socket_array[i] = data[i].id;
 				if(data[i].id!=socket_id)
 				{
-					console.log(data[i].x,data[i].y,data[i].z);
+					//console.log(data[i].x,data[i].y,data[i].z);
 					//console.log("prawda");
 				 three_shapes[i].position.x = data[i].x;
 				 three_shapes[i].position.y = data[i].y;

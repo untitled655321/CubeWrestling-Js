@@ -453,6 +453,7 @@ function animate(){
 	//cube.position.z +=0.01;
 	//mesh.rotation.x += 0.01;
 	//mesh.rotation.y += 0.02;
+	/*
 				var x = camera.position.x;
 				var y = camera.position.y;
 				var z = camera.position.z;
@@ -460,7 +461,7 @@ function animate(){
 				var r_y = camera.rotation.y;
 				document.getElementById("cam_coordinates").innerHTML = "x: "+x+"y: "+y+"z: "+z+" rotation x:"+r_x+" rotation y:"+r_y;
 				
-				
+				*/
 				
 	if(keyboard[87]){ // W key
 		camera.position.x -= Math.sin(camera.rotation.y) * player.speed;

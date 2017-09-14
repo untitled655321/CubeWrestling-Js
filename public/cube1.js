@@ -305,7 +305,11 @@ function init(){
 		scene.add(light);
 	
 	//Setup THREE Camera Position
-	camera.position.set(0, player.height, -5);
+	camera.position.x = 18.59;
+	camera.position.y = 28.8;
+	camera.position.z = -38;
+	camera.rotation.x = -8.722;
+	camera.rotation.y = -18.53;
 	camera.lookAt(new THREE.Vector3(0,player.height,0));
 	
 	
@@ -452,18 +456,7 @@ function moveplayer()
 		camera.position.x += Math.sin(camera.rotation.y - Math.PI/2) * player.speed;
 		camera.position.z += -Math.cos(camera.rotation.y - Math.PI/2) * player.speed;
 	}
-	if(keyboard[69]){ // q key
-		/*camera.position.y += Math.sin(camera.rotation.y - Math.PI/2) * player.speed;
-		camera.position.z += -Math.cos(camera.rotation.y - Math.PI/2) * player.speed;
-		*/
-		bodys[0].position.x+=0.1;
-	}
-	if(keyboard[81]){ // e key
-		/*camera.position.y -= Math.sin(camera.rotation.y - Math.PI/2) * player.speed;
-		camera.position.z -= -Math.cos(camera.rotation.y - Math.PI/2) * player.speed;
-		*/
-		body.position.x-=0.1;
-	}
+	
 	
 	if(keyboard[37]){ // left arrow key
 		//camera.rotation.y -= player.turnSpeed;

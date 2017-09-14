@@ -191,7 +191,7 @@ function Make_player_tru(x,y,z,rot_x,rot_y,rot_z,rot_w)
 
 
 function init(){
-	var https = 'https://cubewrestling.herokuapp.com/';
+	var https = 'localhost:5000'; //https://cubewrestling.herokuapp.com/
 	socket = io.connect(https);
 	//socket.on('cube', drawCube);
 	
@@ -432,6 +432,7 @@ function animate(){
 }
 function moveplayer()
 {
+	//three_shape.material.color.setHex( 0xffffff );
 		if(keyboard[87]){ // W key
 		camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
 		camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
@@ -460,6 +461,7 @@ function moveplayer()
 		*/
 		body.position.x-=0.1;
 	}
+	
 	if(keyboard[37]){ // left arrow key
 		//camera.rotation.y -= player.turnSpeed;
 		var velocity = body.velocity;

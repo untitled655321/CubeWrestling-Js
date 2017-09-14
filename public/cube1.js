@@ -13,7 +13,8 @@ var world,
 
 var movment_speed=1;
 var players=[];
-var cubes_floor = [];
+var cubes_floor = [],
+	cubes_floor_bodys=[];
 var vector_zero = new THREE.Vector3(0,0,0);
  
 
@@ -25,6 +26,7 @@ var keyboard = {};
 var player = { height:1.8, speed:0.2, turnSpeed:Math.PI*0.02 };
 var USE_WIREFRAME = false;
 
+var collision = false;
 
 function make_floor()
 {
@@ -61,6 +63,7 @@ function make_floor()
 		 body.position.set(
         mesh.position.x, mesh.position.y, mesh.position.z
     );
+		cubes_floor_bodys.push(body);
         world.add(body);
 	//scene.add(mesh);
 	}
@@ -188,7 +191,7 @@ function Make_player_tru(x,y,z,rot_x,rot_y,rot_z,rot_w)
 
 
 function init(){
-	var https = 'https://cubewrestling.herokuapp.com';
+	var https = 'https://cubewrestling.herokuapp.com/';
 	socket = io.connect(https);
 	//socket.on('cube', drawCube);
 	
@@ -220,7 +223,7 @@ function init(){
 				
 			//Create CANNON world
 			world = new CANNON.World;
-			world.gravity.set( 0, -50, 0 );
+			world.gravity.set( 0, -150, 0 );
 			world.broadphase = new CANNON.NaiveBroadphase();
 			world.solver.iterations = 10; // Use 10 iterations each time the simulation is run
 			
@@ -283,7 +286,7 @@ function init(){
 				} 
 				
 			}); 
-			
+			body.addEventListener("collide", function(e){ moveplayer(); } );
 			
 	
 	
@@ -356,6 +359,7 @@ function send_player_position_via_socket()
 			}); 
 		
 }
+
 function animate(){
 	//send player list
 			
@@ -422,7 +426,13 @@ function animate(){
 				
 				*/
 				
-	if(keyboard[87]){ // W key
+
+	
+	renderer.render(scene, camera);
+}
+function moveplayer()
+{
+		if(keyboard[87]){ // W key
 		camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
 		camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
 	}
@@ -478,11 +488,8 @@ function animate(){
 
 		velocity.z -=movment_speed;
 		
-	}
-	
-	renderer.render(scene, camera);
 }
-
+}
 
 function keyDown(event){
 	keyboard[event.keyCode] = true;

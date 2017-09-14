@@ -75,15 +75,16 @@ function heartbeat()
 					if(socket.id ==players[i].id)
 					{
 						player = players[i];
+						player.x = data.x;
+					player.y = data.y;
+					player.z = data.z;
+					player.rot_x = data.rot_x;
+					player.rot_y = data.rot_y;
+					player.rot_z = data.rot_z;
+					player.rot_w = data.rot_w;
 					}
 				}
-				player.x = data.x;
-				player.y = data.y;
-				player.z = data.z;
-				player.rot_x = data.rot_x;
-				player.rot_y = data.rot_y;
-				player.rot_z = data.rot_z;
-				player.rot_w = data.rot_w;
+				
 			}
 			
 	}

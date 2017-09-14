@@ -312,12 +312,15 @@ function init(){
 	//Create OpenGlRender
 	var canvas = document.getElementById("canvas");
 	document.body.appendChild(canvas);
-	renderer = new THREE.WebGLRenderer();
+	
+	renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 	renderer.setSize(1280, 720);
 	// Enable Shadows in the Renderer
 	renderer.shadowMap.enabled = true;
 	renderer.shadowMap.type = THREE.BasicShadowMap;
+	//renderer.setClearColor( 0xdddddd, 1);
 	canvas.appendChild(renderer.domElement);
+	
 	
 	
 	

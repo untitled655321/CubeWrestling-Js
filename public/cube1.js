@@ -191,7 +191,7 @@ function Make_player_tru(x,y,z,rot_x,rot_y,rot_z,rot_w)
 
 
 function init(){
-	var https = 'localhost:5000'; //https://cubewrestling.herokuapp.com/
+	var https = 'https://cubewrestling.herokuapp.com/'; //https://cubewrestling.herokuapp.com/
 	socket = io.connect(https);
 	//socket.on('cube', drawCube);
 	
